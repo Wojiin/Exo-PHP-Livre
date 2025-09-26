@@ -1,10 +1,9 @@
 <?php
 function appel($classe){
-    include($classe.".class.php");
+    require($classe.".class.php");
 }
 
 spl_autoload_register("appel");
-$Ca = new Livre("Ca")
 
 
 
