@@ -1,0 +1,24 @@
+<?php
+function appel($classe){
+    include($classe.".class.php");
+}
+
+spl_autoload_register("appel");
+$Ca = new Livre("Ca")
+
+
+
+
+
+
+
+
+
+/*Constructeur
+    public function __construct($titre, $nbPages, $parution, $prix, $auteur){
+        $this->_titre = $titre;             
+        $this->_nbPages = $nbPages;              
+        $this->_parution = $parution;
+        $this->_prix = $prix;          
+        $this->_auteur = $auteur;
+    }*/
