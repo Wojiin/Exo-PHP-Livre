@@ -13,3 +13,9 @@ $l4 = new Livre("Shining", 447, 1977, 16, $a1);
 
 $a1->afficheAge();
 var_dump($l1);
+var_dump($l2);
+var_dump($l3);
+var_dump($l4);
+
+
+

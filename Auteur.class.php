@@ -42,9 +42,17 @@ Class Auteur{
         $this->_livres[] = $livre; 
     }
     
-    public function afficheAge(){
-        $naissance = strtotime($this->_dateNaissance);
-        $age = date("Y") - date("Y", $naissance);
-        echo "Âge de l'auteur : $age ans";
+    public function afficheAge(){        
+        $dateTimeNaiss = new DateTime($this->_dateNaissance);
+        $dateActuelle = new DateTime();
+        $age = $dateActuelle->diff($dateTimeNaiss);
+        echo "L'âge est de : ";
+        echo $age->y . " ans, ";
+        //echo $age->m . " mois, ";
+        //echo $age->d . " jours, ";
+        //echo $age->h . " heures, ";
+        //echo $age->i . " minutes, ";
+        //echo $age->s . " secondes.";
+    
     }
 }
