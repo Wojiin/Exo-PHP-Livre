@@ -5,18 +5,19 @@ Class Auteur{
     private string $_prenom; 
     private string $_nom;
     private array $_livres;
-    private string $_age;
+    private string $_dateNaissance;
+    
     
 //Constructeur
-    public function __construct($nom, $prenom){
+    public function __construct($nom, $prenom, $dateNaissance){
         $this->_nom = $nom;             
         $this->_prenom = $prenom;
         $this->_livres = [];
-        $this->_age = $age;             
+        $this->_dateNaissance = $dateNaissance;         
     }
 //toString
     public function __toString() {
-        return "{$this->_nom}{$this->_prenom}";
+        return "{$this->_nom} {$this->_prenom} {$this->dateNaissance} {$this->livres}";
     }
 //Getters 
     public function getNom() {
@@ -25,22 +26,25 @@ Class Auteur{
     public function getPrenom() {
         return $this->_prenom;
     }
-    public function getAge(){
-        return $this->_age;
+    public function getDateNaissance() {
+        return $this->_dateNaissance;
     }
+
 //Setters
-    public function setTitre($nom) {
+    public function setNom($nom) {
         $this->_nom = $nom;
     }   
-    public function setPrenom($prenoms) {
+    public function setPrenom($prenom) {
         $this->_prenom = $prenom;
     }
-    public function setBirthdate($birthDate){
-        $this->_birthDate = $birthDate;
-    }
+
     public function ajouterLivre(Livre $livre){
-    $this->_livres[] = $livre; 
+        $this->_livres[] = $livre; 
     }
-    public function afficheAge(){}
     
+    public function afficheAge(){
+        $naissance = strtotime($this->_dateNaissance);
+        $age = date("Y") - date("Y", $naissance);
+        echo "Âge de l'auteur : $age ans";
+    }
 }
